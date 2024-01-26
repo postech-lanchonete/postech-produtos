@@ -30,7 +30,7 @@ jobs:
           restore-keys: ${{ runner.os }}-gradle
       - name: Build and analyze
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: ./gradlew build sonar --info
 
@@ -42,30 +42,39 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Login to docker hub
-        run: sudo docker login -u danielmaria -p ${{secrets.DOCKER_PASSWORD}}
+      - name: Set Image Version
+        id: set_version
+        run: echo "IMAGE_VERSION=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+
+      - name: Login no docker hub
+        run: sudo docker login -u danielmaria -p ${{secrets.DOCKERHUB_TOKEN}}
 
       - name: Build docker image
-        run: sudo docker build -t danielmaria/lanchonetebairro-app:latest .
+        run: sudo docker build -t danielmaria/postech-producao:${{ env.IMAGE_VERSION }} .
 
-      - name: Publish image to DockerHub
-        run: sudo docker push danielmaria/lanchonetebairro-app:latest
-
+      - name: Publish image no DockerHub
+        run: |
+          sudo docker push danielmaria/postech-producao:${{ env.IMAGE_VERSION }}
+          sudo docker tag danielmaria/postech-producao:${{ env.IMAGE_VERSION }} danielmaria/postech-producao:latest
+          sudo docker push danielmaria/postech-producao:latest
 
 
   deploy_ec2:
-    runs-on: [self-hosted]
+    runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main' && success()
     needs: build_image
     steps:
-      -  name: Checkout
-         uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
-      - name: Pull Image from docker hub
-        run: sudo docker pull danielmaria/lanchonetebairro-app:latest
+      - name: Pull da Imagem do Docker Hub
+        run: echo "Simulando o pull da imagem do Docker Hub."
 
-      - name: Delete old container
-        run: sudo docker rm -f lanchonetebairro-app-container || true
+      - name: Exclusão do Container Antigo
+        run: echo "Simulando a exclusão do container antigo."
 
-      - name: Run docker container
-        run: sudo docker run -d -p 8080:8080 -e MYSQL_URL=${{secrets.MYSQL_URL}} -e MYSQL_ROOT_PASSWORD=${{secrets.MYSQL_ROOT_PASSWORD}} -e MYSQL_ROOT_USERNAME=${{secrets.MYSQL_ROOT_USERNAME}} --name lanchonetebairro-app-container danielmaria/lanchonetebairro-app:latest
+      - name: Execução do Novo Container Docker
+        run: echo "Simulando a execução do novo container Docker."
+
+      - name: Limpeza
+        run: echo "Simulando passos de limpeza."
