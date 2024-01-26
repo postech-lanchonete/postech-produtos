@@ -50,13 +50,13 @@ jobs:
         run: sudo docker login -u danielmaria -p ${{secrets.DOCKERHUB_TOKEN}}
 
       - name: Build docker image
-        run: sudo docker build -t danielmaria/postech-producao:${{ env.IMAGE_VERSION }} .
+        run: sudo docker build -t danielmaria/postech-produtos:${{ env.IMAGE_VERSION }} .
 
       - name: Publish image no DockerHub
         run: |
-          sudo docker push danielmaria/postech-producao:${{ env.IMAGE_VERSION }}
-          sudo docker tag danielmaria/postech-producao:${{ env.IMAGE_VERSION }} danielmaria/postech-producao:latest
-          sudo docker push danielmaria/postech-producao:latest
+          sudo docker push danielmaria/postech-produtos:${{ env.IMAGE_VERSION }}
+          sudo docker tag danielmaria/postech-produtos:${{ env.IMAGE_VERSION }} danielmaria/postech-produtos:latest
+          sudo docker push danielmaria/postech-produtos:latest
 
 
   deploy_ec2:
