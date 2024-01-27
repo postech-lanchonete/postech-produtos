@@ -4,10 +4,10 @@
 
 <img src="https://img.shields.io/badge/Java-17-important.svg?logo=java" alt="shield referente a versao do java"><img src="https://img.shields.io/badge/Build Tool-Gradle-green.svg?logo=gradle" alt="shield referente ao uso de gradle">[<img src="https://img.shields.io/badge/dockerhub-images-blue.svg?logo=docker" alt="shield referente ao docker hub">](https://hub.docker.com/repository/docker/danielmaria/lanchonetebairro-app/general) <img src="https://img.shields.io/badge/Orchestrated by-Kubernetes-green.svg?logo=kubernetes" alt="shield referente ao uso de kubernetes">[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=postech-lanchonete_lanchonete-backend&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=postech-lanchonete_lanchonete-backend)
 [<img src="https://img.shields.io/badge/dockerhub-images-blue.svg?logo=docker" alt="shield referente ao docker hub">](https://hub.docker.com/repository/docker/danielmaria/lanchonetebairro-app/general)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=postech-lanchonete_postech-producao&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=postech-lanchonete_postech-producao)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=postech-lanchonete_postech-producao&metric=coverage)](https://sonarcloud.io/summary/new_code?id=postech-lanchonete_postech-producao)
-[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=postech-lanchonete_postech-producao&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=postech-lanchonete_postech-producao)
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=postech-lanchonete_postech-producao&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=postech-lanchonete_postech-producao)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=postech-lanchonete_postech-produtos&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=postech-lanchonete_postech-produtos)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=postech-lanchonete_postech-produtos&metric=coverage)](https://sonarcloud.io/summary/new_code?id=postech-lanchonete_postech-produtos)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=postech-lanchonete_postech-produtos&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=postech-lanchonete_postech-produtos)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=postech-lanchonete_postech-produtos&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=postech-lanchonete_postech-produtos)
 
 ____
 <p align="justify">
