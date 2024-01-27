@@ -2,6 +2,7 @@ package br.com.postech.produtos;
 
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.info.Contact;
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.info.License;
 import org.springframework.boot.SpringApplication;
@@ -19,9 +20,10 @@ public class ProdutoApplication {
 	public OpenAPI customOpenAPI() {
 		return new OpenAPI()
 				.components(new Components())
-				.info(new Info().title("Lanchonete do Bairro")
-						.description("API para gerenciamento de pedidos de uma lanchonete")
+				.info(new Info().title("Postech - Lanchonete do Bairro 🍔 - Produção")
+						.description("Estruturada para o gerenciamento eficiente dos pedidos, a API controla o fluxo entre diferentes estados, registrando pedidos na fila e oferecendo busca por estado, contribuindo para uma produção de lanches organizada.")
+						.contact(new Contact().name("Daniel Maria da Silva").url("https://github.com/postech-lanchonete"))
 						.license(new License().name("MIT License").url("https://opensource.org/licenses/MIT"))
-						.version("1.0.0-POC.02"));
+						.version("1.0.0-POC"));
 	}
 }
