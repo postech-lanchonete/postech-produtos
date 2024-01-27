@@ -11,7 +11,7 @@
 
 ____
 <p align="justify">
-A API de Controle de Pedidos e Fila é vital para o gerenciamento eficiente dos pedidos em diferentes estados. Ela oferece a capacidade de registrar pedidos na fila, movê-los entre estados, e controlar seu fluxo até a conclusão. Além disso, a API possibilita a busca de pedidos com base em seu estado, tornando mais fácil para a equipe de produção monitorar o status de cada pedido. Os estados possíveis incluem RECEBIDO, EM_PREPARACAO, PRONTO e FINALIZADO. Essa abordagem estruturada garante uma gestão eficaz da produção de lanches.
+A API de Produtos proporciona funcionalidades cruciais para a gestão do cardápio. Os usuários podem criar produtos em diversas categorias, como LANCHE, ACOMPANHAMENTO, BEBIDA ou SOBREMESA. Além disso, a API permite a busca de produtos por meio de seus IDs, proporcionando uma maneira rápida e eficiente de recuperar informações específicas sobre um item no cardápio.
 </p>
 
 ## Pipeline

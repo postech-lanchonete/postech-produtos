@@ -20,8 +20,8 @@ public class ProdutoApplication {
 	public OpenAPI customOpenAPI() {
 		return new OpenAPI()
 				.components(new Components())
-				.info(new Info().title("Postech - Lanchonete do Bairro 🍔 - Produção")
-						.description("Estruturada para o gerenciamento eficiente dos pedidos, a API controla o fluxo entre diferentes estados, registrando pedidos na fila e oferecendo busca por estado, contribuindo para uma produção de lanches organizada.")
+				.info(new Info().title("Postech - Lanchonete do Bairro 🍔 - Produtos")
+						.description("Fundamental para o cardápio, a API de Produtos permite a criação e busca eficiente de produtos em categorias específicas, como lanches, acompanhamentos, bebidas e sobremesas.")
 						.contact(new Contact().name("Daniel Maria da Silva").url("https://github.com/postech-lanchonete"))
 						.license(new License().name("MIT License").url("https://opensource.org/licenses/MIT"))
 						.version("1.0.0-POC"));
