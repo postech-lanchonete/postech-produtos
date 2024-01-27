@@ -1,13 +1,13 @@
 package br.com.postech.produtos.adapters.controllers;
 
-import br.com.postech.produtos.business.usecases.UseCase;
-import br.com.postech.produtos.core.entities.Produto;
-import br.com.postech.produtos.core.enums.CategoriaProduto;
-import br.com.postech.produtos.drivers.web.ProdutoAPI;
 import br.com.postech.produtos.adapters.adapter.ProdutoAdapter;
 import br.com.postech.produtos.adapters.dto.CriacaoProdutoDTO;
 import br.com.postech.produtos.adapters.dto.EdicaoProdutoDTO;
 import br.com.postech.produtos.adapters.dto.ProdutoResponseDTO;
+import br.com.postech.produtos.business.usecases.UseCase;
+import br.com.postech.produtos.core.entities.Produto;
+import br.com.postech.produtos.core.enums.CategoriaProduto;
+import br.com.postech.produtos.drivers.web.ProdutoAPI;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;

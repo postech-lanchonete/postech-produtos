@@ -1,8 +1,8 @@
 package br.com.postech.produtos.business.usecases.implementation;
 
+import br.com.postech.produtos.adapters.gateways.ProdutoGateway;
 import br.com.postech.produtos.business.usecases.UseCase;
 import br.com.postech.produtos.core.entities.Produto;
-import br.com.postech.produtos.adapters.gateways.ProdutoGateway;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Component;

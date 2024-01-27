@@ -1,9 +1,9 @@
 package br.com.postech.produtos.business.usecases.implementation;
 
+import br.com.postech.produtos.adapters.gateways.ProdutoGateway;
 import br.com.postech.produtos.business.exceptions.NotFoundException;
 import br.com.postech.produtos.business.usecases.UseCase;
 import br.com.postech.produtos.core.entities.Produto;
-import br.com.postech.produtos.adapters.gateways.ProdutoGateway;
 import org.springframework.stereotype.Component;
 
 @Component("produtoBuscarPorIdUseCase")

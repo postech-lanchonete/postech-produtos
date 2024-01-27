@@ -1,9 +1,9 @@
 package br.com.postech.produtos.integrationTest;
 
-import br.com.postech.produtos.core.entities.Produto;
-import br.com.postech.produtos.core.enums.CategoriaProduto;
 import br.com.postech.produtos.adapters.dto.CriacaoProdutoDTO;
 import br.com.postech.produtos.adapters.repositories.ProdutoRepository;
+import br.com.postech.produtos.core.entities.Produto;
+import br.com.postech.produtos.core.enums.CategoriaProduto;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.assertj.core.api.Assertions;
 import org.hamcrest.Matchers;

@@ -1,9 +1,9 @@
 package br.com.postech.produtos.bdd.steps;
 
-import br.com.postech.produtos.bdd.helper.RequestHelper;
-import br.com.postech.produtos.core.enums.CategoriaProduto;
 import br.com.postech.produtos.adapters.dto.CriacaoProdutoDTO;
 import br.com.postech.produtos.adapters.dto.ProdutoResponseDTO;
+import br.com.postech.produtos.bdd.helper.RequestHelper;
+import br.com.postech.produtos.core.enums.CategoriaProduto;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.E;
 import io.cucumber.java.pt.Entao;

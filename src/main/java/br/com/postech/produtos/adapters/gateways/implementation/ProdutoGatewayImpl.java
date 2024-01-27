@@ -1,8 +1,8 @@
 package br.com.postech.produtos.adapters.gateways.implementation;
 
-import br.com.postech.produtos.core.entities.Produto;
 import br.com.postech.produtos.adapters.gateways.ProdutoGateway;
 import br.com.postech.produtos.adapters.repositories.ProdutoRepository;
+import br.com.postech.produtos.core.entities.Produto;
 import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Component;
 
