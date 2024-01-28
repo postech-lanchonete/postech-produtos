@@ -1,7 +1,6 @@
 package br.com.postech.produtos.adapters.handler;
 
 import br.com.postech.produtos.business.exceptions.BadRequestException;
-import br.com.postech.produtos.business.exceptions.NegocioException;
 import br.com.postech.produtos.business.exceptions.NotFoundException;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
@@ -18,13 +17,6 @@ import java.util.stream.Collectors;
 @ControllerAdvice
 @Order(Ordered.HIGHEST_PRECEDENCE)
 public class ApiExceptionHandler {
-
-
-    @ExceptionHandler(NegocioException.class)
-    public final ResponseEntity<ExceptionResponse> handleTo(NegocioException e) {
-        return new ResponseEntity<>(new ExceptionResponse(ErrorType.PROCESS_FAILURE,
-                e.getMessage()), HttpStatus.UNPROCESSABLE_ENTITY);
-    }
     @ExceptionHandler(BadRequestException.class)
     public final ResponseEntity<ExceptionResponse> handleTo(BadRequestException e) {
         return new ResponseEntity<>(new ExceptionResponse(ErrorType.VALIDATION_FAILURE,
