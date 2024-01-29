@@ -4,6 +4,7 @@
 
 <img src="https://img.shields.io/badge/Java-17-important.svg?logo=java" alt="shield referente a versao do java"><img src="https://img.shields.io/badge/Build Tool-Gradle-green.svg?logo=gradle" alt="shield referente ao uso de gradle">[<img src="https://img.shields.io/badge/dockerhub-images-blue.svg?logo=docker" alt="shield referente ao docker hub">](https://hub.docker.com/repository/docker/danielmaria/postech-produtos/general) <img src="https://img.shields.io/badge/Orchestrated by-Kubernetes-green.svg?logo=kubernetes" alt="shield referente ao uso de kubernetes">
 [<img src="https://img.shields.io/badge/dockerhub-images-blue.svg?logo=docker" alt="shield referente ao docker hub">](https://hub.docker.com/repository/docker/danielmaria/postech-produtos/general)
+
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=postech-lanchonete_postech-produtos&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=postech-lanchonete_postech-produtos)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=postech-lanchonete_postech-produtos&metric=coverage)](https://sonarcloud.io/summary/new_code?id=postech-lanchonete_postech-produtos)
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=postech-lanchonete_postech-produtos&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=postech-lanchonete_postech-produtos)
@@ -16,11 +17,11 @@ A API de Produtos proporciona funcionalidades cruciais para a gestão do cardáp
 
 ## Pipeline
 <p align="justify">
-Quando um desenvolvedor faz um commit no GitHub, a plataforma identifica se a ação deve ser acionada. Se sim, a pipeline inicia com o CI, que executa testes unitários. Se os testes forem bem-sucedidos, a imagem Docker é construída e enviada para o Docker Hub. Após a conclusão bem-sucedida do CI, o CD entra em ação. Ele começa baixando a imagem Docker, remove o contêiner em execução na instância EC2 e substitui-o pela nova imagem. Esse fluxo garante que seu software seja testado automaticamente e implantado de forma eficiente, melhorando a qualidade e a entrega contínua de novas funcionalidades.
+    Esta pipeline automatizada para um projeto Java realiza uma série de etapas cruciais. Inicialmente, o job "code_check" é acionado a cada push no repositório ou manualmente. Neste ponto, são configurados o ambiente Java com JDK 17, e os pacotes do SonarCloud e Gradle são gerenciados em cache. O projeto é construído e analisado usando o Gradle, e os resultados são enviados para o SonarCloud. Em seguida, o job "build_image" é executado apenas em caso de push na branch principal (main) e após o término bem-sucedido do job "code_check". Aqui, a imagem Docker do aplicativo é construída e publicada no Docker Hub, sendo a versão da imagem derivada do hash do commit mais recente. Por fim, o job "deploy_ec2" é acionado nas mesmas condições do "build_image" e após a conclusão bem-sucedida do job "build_image". Este job simula a atualização do aplicativo na EC2, puxando a imagem mais recente do Docker Hub, excluindo o contêiner antigo (simulado), executando um novo contêiner Docker (simulado) e realizando etapas simuladas de limpeza.
 </p>
 
 <p align="center">
-  <img src="https://github.com/postech-lanchonete/lanchonete-backend/assets/20681811/15ad5f82-7b39-43d9-8f4b-b0778f9daeb2" />
+  <img src="https://github.com/postech-lanchonete/postech-produtos/assets/20681811/08b3b4db-0879-425b-ba9e-93d7e2e6c61f" />
 </p>
 
 
