@@ -1,4 +1,4 @@
-package br.com.postech.produtos.adapters.gateways;
+package br.com.postech.produtos.drivers.external;
 
 import org.springframework.data.domain.Example;
 

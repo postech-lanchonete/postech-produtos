@@ -1,4 +1,4 @@
-package br.com.postech.produtos.drivers.web.config;
+package br.com.postech.produtos.drivers.config;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

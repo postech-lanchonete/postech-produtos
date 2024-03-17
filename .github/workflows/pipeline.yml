@@ -15,7 +15,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: 17
-          distribution: 'zulu'
+          distribution: "zulu"
       - name: Cache SonarCloud packages
         uses: actions/cache@v3
         with:
@@ -58,7 +58,6 @@ jobs:
           sudo docker tag danielmaria/postech-produtos:${{ env.IMAGE_VERSION }} danielmaria/postech-produtos:latest
           sudo docker push danielmaria/postech-produtos:latest
 
-
   deploy_ec2:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main' && success()
@@ -71,7 +70,7 @@ jobs:
         run: echo "docker pull seurepositorio/postech-produtos:latest"
 
       - name: Simulando Configuração AWS CLI
-        run: echo "aws configure set aws_access_key_id {{ secrets.AWS_ACCESS_KEY_ID }} && aws configure set aws_secret_access_key {{ secrets.AWS_SECRET_ACCESS_KEY }} && aws configure set default.region us-east-1"
+        run: echo "aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }} && aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }} && aws configure set default.region us-east-1"
 
       - name: Simulando Atualização do Manifesto do K8s
         run: echo "kubectl set image deployment/postech-produtos sua-container=danielmaria/postech-produtos:latest"
